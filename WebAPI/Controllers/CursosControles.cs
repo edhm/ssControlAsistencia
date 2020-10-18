@@ -16,10 +16,9 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet]
-        public async Task<ActionResult<List<Curso>>> Get()
-        {
-            return (ActionResult<List<Curso>>)await _mediator.Send(new Consulta.ListaCursos());
+        public async Task<ActionResult<List<Curso>>>Get(){
+            //return await  _mediator.Send(new Consulta.ListaCursos());
+            return (ActionResult<List<Curso>>)await  _mediator.Send(new Consulta.ListaCursos());
         }
     }
 }
